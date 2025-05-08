@@ -24,9 +24,10 @@
     width: 125px;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
 }
 .name{
+    margin: 0;
     font-size: 0.9rem;
     margin-bottom: 3px;
 }
