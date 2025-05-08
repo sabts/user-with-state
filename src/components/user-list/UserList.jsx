@@ -8,22 +8,27 @@ const UserList = () => {
 const [search, setSearch ] = useState("");
 const [activecheck, setActivecheck] = useState(false);
 const [sortby, setSortby] = useState('default');
-
-const filtered = filterByActive(USERS, activecheck);
+const filtered = sortUsers(
+    filterBySearch(
+      filterByActive(USERS, activecheck),
+      search
+    ),
+    sortby
+  );
 return<>
     <h1>Listado de Usuarios</h1>
     <form className={styles["inputs-form"]}>
         <input type="text" 
         placeholder="Buscar..."
         value={search}
-        onChange={setSearch} />
+       onChange={(e) => setSearch(e.target.value)} />
         <label>
             <input type="checkbox"
             checked={activecheck}
             onChange={() => setActivecheck(!activecheck)}/>
             Sólo activos
         </label>
-        <select value={sortby} onChange={setSortby}>
+        <select value={sortby} onChange={() => setSortby(sortby)}>
             <option value="default">Por defecto</option>
             <option value="by name">Por nombre</option>
         </select>
@@ -50,6 +55,6 @@ const sortUsers = (users, sortby) => {
       return [...users].sort((a, b) => a.name.localeCompare(b.name));
     }
     return users;
-  };
+};
 
 export default UserList
