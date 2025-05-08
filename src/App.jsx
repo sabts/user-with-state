@@ -1,10 +1,9 @@
-import Button from "./components/button/Button";
+import UserList from "./components/user-list/UserList";
 
 const App = () => {
   return (
     <>
-      <h1>Template React</h1>
-      <Button />
+    <UserList></UserList>
     </>
   );
 };
