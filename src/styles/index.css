@@ -29,3 +29,9 @@ body {
   font-family: sans-serif;
   padding: 0.5rem;
 }
+
+@media screen and (min-width: 1020px) {
+  body{
+    padding-inline: 5rem;
+  }
+}

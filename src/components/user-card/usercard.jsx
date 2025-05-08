@@ -4,10 +4,12 @@ import styles from "./usercard.module.css"
 const UserCard = ({profileImage, name, username, active}) => {
     const getStatusText = active ? "Activo" : "Inactivo";
 return <div className={styles["user-card"]}>
+    <div className={styles["userinfo"]}>
     <img src={profileImage} className={styles["photo-container"]}/>
     <div className={styles["username-container"]}>
         <h4 className={styles["name"]}>{name}</h4>
         <p className={styles["username"]}>@{username}</p>
+    </div>
     </div>
     <span>{getStatusText}</span>
     <Button>Ver Detalles</Button>
