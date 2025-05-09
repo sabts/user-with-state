@@ -52,7 +52,7 @@ const filterByActive = activecheck => {
 };
 
 const filterBySearch = (filterActiveUser, search) => {
-  console.log(search);
+  //console.log(search);
   const filtered = search
     ? filterActiveUser.filter(user =>
         user.name.toLowerCase().includes(search.toLowerCase())
