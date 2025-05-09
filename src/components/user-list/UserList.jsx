@@ -59,7 +59,7 @@ const filterBySearch = (filterActiveUser, search) => {
 const sortbyUsersName = (filterBySearchResult, sortby) => {
   return sortby === "by name"
     ? [...filterBySearchResult].sort((a, b) => a.name.localeCompare(b.name))
-    : USERS;
+    : filterBySearchResult;
 };
 
 export default UserList;
