@@ -11,6 +11,11 @@ const UserList = () => {
   const filterActiveUser = filterByActive(activecheck);
   const filterBySearchResult = filterBySearch(filterActiveUser, search);
   const filtered = sortbyUsersName(filterBySearchResult, sortby);
+  // no hay otra forma de crear los filtros
+  //cuando se crea se debe ir del más sencillo y pesa menos (true o false) a lo más complejo
+  //por ejemplo en este caso "filterActiveUser" es un true o false con el check
+  // Luego en "filterBySearchResult" cuesta un poco más pero debe leer las letras que incluye el array
+  //pero ya en "filtered" debe leer el array y recomodaro lo cual es más "pesado"
   return (
     <>
       <h1>Listado de Usuarios</h1>
@@ -59,7 +64,7 @@ const filterBySearch = (filterActiveUser, search) => {
 const sortbyUsersName = (filterBySearchResult, sortby) => {
   return sortby === "by name"
     ? [...filterBySearchResult].sort((a, b) => a.name.localeCompare(b.name))
-    : filterBySearchResult;
+    : filterBySearchResult; //que return aqui para que no se reinicia a todos si coloco el select en "default"
 };
 
 export default UserList;
